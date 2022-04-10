@@ -1,4 +1,4 @@
-package models
+package dto 
 
 import (
 	"github.com/LucaKuechler/StrengthTracker/utils/errors"
@@ -6,7 +6,6 @@ import (
 )
 
 type User struct {
-    ID uint64 `json:"id"`
     Password string `json:"password"`
     Email string `json:"email"`
 }
