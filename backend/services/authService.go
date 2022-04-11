@@ -4,7 +4,8 @@ import (
 	"github.com/LucaKuechler/StrengthTracker/models/DTO"
 	"github.com/LucaKuechler/StrengthTracker/utils/errors"
 	"github.com/LucaKuechler/StrengthTracker/utils/helper"
-	"github.com/dgrijalva/jwt-go"
+	// "github.com/dgrijalva/jwt-go"
+	"github.com/golang-jwt/jwt/v4"
 	"strconv"
 	"time"
 )

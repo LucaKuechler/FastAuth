@@ -6,7 +6,8 @@ import (
 )
 
 func main() {
-	router := gin.Default()
+	router := gin.New()
+    router.Use(gin.Logger(), gin.Recovery())
 
 	routes.Setup(router)
 
