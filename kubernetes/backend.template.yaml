@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: strength-tracker-backend
-          image: GITHUB_REGISTRY_PREFIX/go_example:GITHUB_IMAGE_LABEL
+          image: GITHUB_REGISTRY_URL/go_example:GITHUB_IMAGE_LABEL
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
