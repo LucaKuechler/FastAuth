@@ -3,7 +3,6 @@ module github.com/LucaKuechler/StrengthTracker
 go 1.17
 
 require (
-	github.com/MicahParks/keyfunc v1.0.3
 	github.com/gin-gonic/gin v1.7.7
 	github.com/golang-jwt/jwt/v4 v4.1.0
 	golang.org/x/crypto v0.0.0-20220331220935-ae2d96664a29
@@ -12,7 +11,6 @@ require (
 )
 
 require (
-	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-playground/locales v0.14.0 // indirect
 	github.com/go-playground/universal-translator v0.18.0 // indirect

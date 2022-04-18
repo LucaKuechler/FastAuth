@@ -6,18 +6,18 @@ import (
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"log"
+	"os"
 )
 
-var (
-	Client   *gorm.DB
-	username = "root"
-	password = "ordix"
-	protocol = "tcp"
-	host     = "localhost:3306"
-	schema   = "ordix"
-)
+var Client *gorm.DB
 
 func init() {
+	username := os.Getenv("DB_USER")
+	password := os.Getenv("DB_PASSWORD")
+	host := os.Getenv("DB_HOST")
+	schema := os.Getenv("DB_NAME")
+    protocol := "tcp"
+
 	dataSourceName := fmt.Sprintf("%s:%s@%s(%s)/%s", username, password, protocol, host, schema)
 
 	client, err := gorm.Open(mysql.Open(dataSourceName), &gorm.Config{})
