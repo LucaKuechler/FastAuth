@@ -3,12 +3,12 @@
 ## BACKEND CONFIGURATION
 * Set following github secrets:
 ```
-GITHUB_JWT_SECRET_KEY = key
-GITHUB_DB_USER = user
-GITHUB_DB_PASSWORD = password
-GITHUB_DB_HOST = hostname:port
-GITHUB_DB_NAME = database
+GH_JWT_SECRET_KEY = key
+GH_DB_USER = user
+GH_DB_PASSWORD = password
+GH_DB_HOST = hostname:port
+GH_DB_NAME = database
 
-GITHUB_REGISTRY_URL = url.com
-GITHUB_PULL_SECRET_NAME = name
+GH_REGISTRY_URL = url.com
+GH_PULL_SECRET_NAME = name
 ```
