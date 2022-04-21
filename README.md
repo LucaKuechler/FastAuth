@@ -1,6 +1,6 @@
 # FAST AUTH
 
-## BACKEND CONFIGURATION
+## DEPLOY AND CONFIGURE
 * Fill in your Parameters for all uppercase words in the deploy folder.
 
 * Build image.
