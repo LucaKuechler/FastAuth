@@ -1,4 +1,27 @@
-# Strength Tracker
+# FAST AUTH
+
+## BACKEND CONFIGURATION
+* Fill in your Parameters for all uppercase words in the deploy folder.
+
+* Build image.
+```bash
+$ docker build -t <your-registry-url>/fastauth:latest src/
+```
+
+* Login into your private registry.
+```bash
+$ docker login <your-registry-url>
+``` 
+
+* Push to your private registry.
+```bash
+$ docker push <your-registry-url>/fastauth:latest 
+``` 
+
+* Apply configuration.
+```bash
+$ kubectl apply -f deploy/
+```
 
 ## CICD CONFIGURATION
 * Set following github secrets:
@@ -12,15 +35,8 @@ GH_DB_NAME = database
 GH_REGISTRY_URL = url.com
 GH_PULL_SECRET_NAME = name
 
-PRIVATE_REGISTRY_USERNAME
-PRIVATE_REGISTRY_PASSWORD
+PRIVATE_REGISTRY_USERNAME = username
+PRIVATE_REGISTRY_PASSWORD = password
 
 KUBE_CONFIG = {}
-```
-
-## BACKEND CONFIGURATION
-
-* Create IngressRoute and Secret
-```
-kubectl apply -f kubernetes/ingressRoute.yaml -f kubernetes/secret.yaml
 ```

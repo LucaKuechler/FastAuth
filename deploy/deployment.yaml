@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastauth
+  namespace: authentification
+  labels:
+    app: fastauth
+spec:
+  selector:
+    matchLabels:
+      app: fastauth
+  template:
+    metadata:
+      namespace: authentification
+      labels:
+        app: fastauth
+    spec:
+      containers:
+        - name: fastauth
+          image: YOUR_REGISTRY_URL/fastauth:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          env:
+            - name: JWT_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: fastauth-secret
+                  key: jwt_secret_key 
+
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: fastauth-secret
+                  key: db_user 
+
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: fastauth-secret
+                  key: db_password 
+
+            - name: DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: fastauth-configmap
+                  key: db_host
+
+            - name: DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: fastauth-configmap
+                  key: db_name
+
+      imagePullSecrets:
+        - name: YOUR_PULL_SECRET

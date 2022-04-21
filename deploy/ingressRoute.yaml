@@ -1,0 +1,17 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: fastauth
+  namespace: authentification
+spec:
+  entryPoints:
+    - websecure
+  tls: {}
+  routes:
+    - match: Host(`subdomain.your-domain`)
+      kind: Rule
+      services:
+        - name: fastauth-service
+          port: 8080
+          scheme: http
+
